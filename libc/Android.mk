@@ -245,6 +245,12 @@ libc_bionic_src_files := \
     bionic/wait.cpp \
     bionic/wchar.cpp \
 
+ifeq ($(TARGET_BOARD_PLATFORM), hi3630)
+libc_bionic_src_files += \
+	bionic/hmp_sched_setaffinity.cpp \
+LOCAL_CFLAGS += -DHISILICON_HI3630
+endif
+
 libc_tzcode_src_files := \
     tzcode/asctime.c \
     tzcode/difftime.c \

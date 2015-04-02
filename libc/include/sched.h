@@ -103,6 +103,10 @@ extern int sched_setaffinity(pid_t pid, size_t setsize, const cpu_set_t* set);
 
 extern int sched_getaffinity(pid_t pid, size_t setsize, cpu_set_t* set);
 
+#ifdef HISILICON_HI3630
+extern int hmp_sched_setaffinity(void);
+#endif
+
 /* Provide optimized implementation for 32-bit cpu_set_t */
 #if CPU_SETSIZE == __CPU_BITS
 
