@@ -78,6 +78,10 @@ extern int sched_setaffinity(pid_t pid, size_t setsize, const cpu_set_t* set);
 
 extern int sched_getaffinity(pid_t pid, size_t setsize, cpu_set_t* set);
 
+#ifdef HISILICON_HI3630
+extern int hmp_sched_setaffinity(void);
+#endif
+
 #define CPU_ZERO(set)          CPU_ZERO_S(sizeof(cpu_set_t), set)
 #define CPU_SET(cpu, set)      CPU_SET_S(cpu, sizeof(cpu_set_t), set)
 #define CPU_CLR(cpu, set)      CPU_CLR_S(cpu, sizeof(cpu_set_t), set)

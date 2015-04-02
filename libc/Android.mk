@@ -235,6 +235,12 @@ libc_bionic_src_files := \
     bionic/wchar.cpp \
     bionic/wctype.cpp \
 
+ifeq ($(TARGET_BOARD_PLATFORM), hi3630)
+libc_bionic_src_files += \
+	bionic/sched_setaffinity.cpp
+LOCAL_CFLAGS += -DHISILICON_HI3630
+endif
+
 libc_cxa_src_files := \
     bionic/__cxa_guard.cpp \
     bionic/__cxa_pure_virtual.cpp \
